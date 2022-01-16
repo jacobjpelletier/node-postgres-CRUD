@@ -419,18 +419,21 @@ The "start" script is used for production
 2. run `docker-compose up -d --build && docker-compose logs -f`
 
 ### To Verify DB migrations are working
-1. Once running, open another terminal and run docker ps to get `id`
-2. `docker exec -it <id> psql -U postgres postgres` to login to psql DB
-3. `\c postgres` to see postgres DB (name defined in docker-compose)
-4. `dt` to see tables
+
+1. db-migrate create mythical-worlds-table --sql-file
+
+2. Once running, open another terminal and run docker ps to get `id`
+3. `docker exec -it <id> psql -U postgres postgres` to login to psql DB
+4. `\c postgres` to see postgres DB (name defined in docker-compose)
+5. `dt` to see tables
    1. should see migrations and user_profile
-5. `SELECT * FROM user_profile;`
+6. `SELECT * FROM user_profile;`
    1. see no user
-6. `SELECT * FROM migrations;`
+7. `SELECT * FROM migrations;`
    1. see two items:
       1. create-migrations-table
       2. create-table
-7. back in project directory, create a new migration
+8. back in project directory, create a new migration
    1. called `2_create-table.sql`. note that numbers prefixing names should be unique
    2. fill with: 
    ``` 

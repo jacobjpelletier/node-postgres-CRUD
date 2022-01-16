@@ -4,14 +4,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-var db_1 = __importDefault(require("./db"));
-var PORT = process.env.PORT || 3000;
+var body_parser_1 = __importDefault(require("body-parser"));
 var app = (0, express_1.default)();
+var address = "0.0.0.0:3000";
+app.use(body_parser_1.default.json());
 app.get('/', function (req, res) {
-    res.send('hello');
+    res.send('Hello World!');
 });
-app.listen(PORT, function () {
-    console.log("app running on port ".concat(PORT));
-    db_1.default.runMigrations();
+app.listen(3000, function () {
+    console.log("starting app on: ".concat(address));
 });
 //# sourceMappingURL=index.js.map

@@ -4,15 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "lint": "eslint 'src/*.ts'",
-    "jasmine": "jasmine",
-    "build": "rm -rf dist && ttsc && cp -R ./src/db/migrations ./dist/db",
+    "prettier": "node_modules/.bin/prettier --config .prettierrc 'src/**/*.ts' --write",
+    "lint": "node_modules/.bin/eslint 'src/*.ts'",
+    "jasmine": "node_modules/.bin/jasmine",
+    "build": "rm -rf dist && ttsc && cp -R migrations ./dist/db",
     "dev": "NODE_PATH=src nodemon --watch src -e ts --exec ts-node -r dotenv/config src/index.ts",
     "test": "npm run build && npm run jasmine",
     "start": "node dist/index.js"
   },
   "dependencies": {
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
     "express": "^4.17.1",
     "pg": "^8.7.1",
     "postgres-migrations": "^5.1.1"

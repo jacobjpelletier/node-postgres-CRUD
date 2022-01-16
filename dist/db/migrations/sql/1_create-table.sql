@@ -1,4 +1,6 @@
-CREATE TABLE user_profile(
-  user_id VARCHAR(64) PRIMARY KEY,
-  name VARCHAR(256)
+CREATE TABLE mythical(
+  name VARCHAR(100),
+  type VARCHAR(50),
+  weight integer,
+  id SERIAL PRIMARY KEY
 );

@@ -1,16 +1,16 @@
 import express, { Request, Response } from 'express'
-import db from 'db'
+import bodyParser from 'body-parser'
 
-const PORT = process.env.PORT || 3000
+const app: express.Application = express()
+const address: string = "0.0.0.0:3000"
 
-const app = express()
+app.use(bodyParser.json())
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('hello')
+app.get('/', function (req: Request, res: Response) {
+  res.send('Hello World!')
 })
 
-app.listen(PORT, () => {
-  console.log(`app running on port ${PORT}`)
-  db.runMigrations()
+app.listen(3000, function () {
+  console.log(`starting app on: ${address}`)
 })
 
