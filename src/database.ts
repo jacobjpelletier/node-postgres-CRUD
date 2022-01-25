@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 import { Pool } from 'pg'
 
 dotenv.config()
+
 const {
 	DB_HOST,
 	DB_DB,

@@ -53,7 +53,7 @@ Once you have installed node you can use npm to define a node project's metadata
   "license": "MIT",
   "scripts": {
     "build": "rm -rf dist && ttsc && cp -R ./src/db/migrations ./dist/db",
-    "dev": "NODE_PATH=src nodemon --watch src -e ts --exec ts-node -r dotenv/config src/index.ts",
+    "dev": "NODE_PATH=src nodemon --watch src -e ts --exec ts-node -r dotenv/config src/database.ts",
     "start": "node dist/index.js"
   },
   "dependencies": {
@@ -247,7 +247,7 @@ Configure tsconfig.json like this:
   "include": ["./src/**/*"]
 }
 ```
-1. "paths" config will allow us to use abs path such as "import db from 'db'" in index.ts instead of something like "import db from './../../db'"
+1. "paths" config will allow us to use abs path such as "import db from 'db'" in database.ts instead of something like "import db from './../../db'"
 2. "plugins" is where we can add typescript-transform-paths to help ts handle absolute path 
 __________
 ## Docker
@@ -366,7 +366,7 @@ We use the npm package [postgres-migrations](https://www.npmjs.com/package/postg
 `npm install db-migrate`
 
 ### Configuration
-see index.ts for how basic db was setup
+see database.ts for how basic db was setup
 
 __________
 
@@ -406,9 +406,9 @@ The "build" script compiles TS to commonJS.
      - when you run npm run build, you will see correct relative path in /dist
    - because ts compilations only handle .ts files, we need to manually move migrations into the dist folder with `cp -R ./src/db/migrations ./dist/db`
 The "dev" script we run during development
-2. `"dev": "NODE_PATH=src nodemon --watch src -e ts --exec ts-node -r dotenv/config src/index.ts"`
+2. `"dev": "NODE_PATH=src nodemon --watch src -e ts --exec ts-node -r dotenv/config src/database.ts"`
    - tells nodemon to watch for any changes in the source folder 
-   - executes ts-node to read .env file apply this to run src/index.ts
+   - executes ts-node to read .env file apply this to run src/database.ts
    - NODE_PATH is to help with absolute path issues when running dev script
 The "start" script is used for production 
 3. `"start": "node dist/index.js"`
