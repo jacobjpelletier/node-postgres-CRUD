@@ -1,2 +1,4 @@
-import {Client} from "pg";
 
+export type Weapon {
+  id:
+}
