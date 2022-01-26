@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var book_1 = require("../book");
+var book_1 = require("../models/book");
 var store = new book_1.BookStore();
 describe("Book Model", function () {
     it('should have an index method', function () {
@@ -59,11 +59,12 @@ describe("Book Model", function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, store.create({
+                        id: 1,
                         title: 'Bridge to Terabithia',
-                        totalPages: 250,
                         author: 'Katherine Paterson',
+                        totalPages: 250,
                         type: 'Childrens',
-                        summary: 'idk',
+                        summary: 'idk'
                     })];
                 case 1:
                     result = _a.sent();
@@ -71,10 +72,9 @@ describe("Book Model", function () {
                         //@ts-ignore
                         id: "1",
                         title: 'Bridge to Terabithia',
-                        total_pages: 250,
+                        totalPages: 250,
                         author: 'Katherine Paterson',
-                        type: 'Childrens',
-                        summary: 'idk',
+                        type: 'Childrens'
                     });
                     return [2 /*return*/];
             }
@@ -91,7 +91,7 @@ describe("Book Model", function () {
                             //@ts-ignore
                             id: "1",
                             title: 'Bridge to Terabithia',
-                            total_pages: 250,
+                            totalPages: 250,
                             author: 'Katherine Paterson',
                             type: 'Childrens'
                         }]);
@@ -110,7 +110,7 @@ describe("Book Model", function () {
                         //@ts-ignore
                         id: "1",
                         title: 'Bridge to Terabithia',
-                        total_pages: 250,
+                        totalPages: 250,
                         author: 'Katherine Paterson',
                         type: 'Childrens'
                     });
@@ -133,4 +133,4 @@ describe("Book Model", function () {
         });
     }); });
 });
-//# sourceMappingURL=mythical_weapon_spec.js.map
+//# sourceMappingURL=bookSpec.js.map

@@ -45,7 +45,6 @@ var database_1 = __importDefault(require("../database"));
 var BookStore = /** @class */ (function () {
     function BookStore() {
     }
-    // get list of items in database, all promises of a type of thing - i.e. promise of a book array
     BookStore.prototype.index = function () {
         return __awaiter(this, void 0, void 0, function () {
             var conn, sql, result, err_1;
@@ -53,20 +52,14 @@ var BookStore = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 3, , 4]);
-                        return [4 /*yield*/, database_1.default.connect()
-                            // sql command
-                        ];
+                        return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         conn = _a.sent();
                         sql = 'SELECT * FROM books';
-                        return [4 /*yield*/, conn.query(sql)
-                            // close database connection
-                        ];
+                        return [4 /*yield*/, conn.query(sql)];
                     case 2:
                         result = _a.sent();
-                        // close database connection
                         conn.release();
-                        // return result
                         return [2 /*return*/, result.rows];
                     case 3:
                         err_1 = _a.sent();
@@ -107,12 +100,12 @@ var BookStore = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 3, , 4]);
-                        sql = 'INSERT INTO books (title, author, total_pages, summary) VALUES($1, $2, $3, $4) RETURNING *';
+                        sql = 'INSERT INTO books (title, author, totalPages, type, summary) VALUES($1, $2, $3, $4) RETURNING *';
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         conn = _a.sent();
                         return [4 /*yield*/, conn
-                                .query(sql, [b.title, b.author, b.totalPages, b.summary])];
+                                .query(sql, [b.title, b.author, b.totalPages, b.type, b.summary])];
                     case 2:
                         result = _a.sent();
                         book = result.rows[0];

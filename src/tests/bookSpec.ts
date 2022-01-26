@@ -1,4 +1,4 @@
-import { Book, BookStore } from '../book';
+import { Book, BookStore } from '../models/book';
 
 const store = new BookStore()
 
