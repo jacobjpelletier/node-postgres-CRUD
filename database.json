@@ -10,7 +10,7 @@
     "driver": "pg",
     "host": "127.0.0.1",
     "database": "magical_world_test",
-    "user": "wizard_test",
-    "password": "password123_test"
+    "user": "wizard",
+    "password": "password123"
   }
 }
