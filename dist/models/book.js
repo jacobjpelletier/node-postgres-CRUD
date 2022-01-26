@@ -100,12 +100,12 @@ var BookStore = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 3, , 4]);
-                        sql = 'INSERT INTO books (title, author, totalPages, type, summary) VALUES($1, $2, $3, $4) RETURNING *';
+                        sql = 'INSERT INTO books (title, author, total_pages, genre, summary) VALUES($1, $2, $3, $4) RETURNING *';
                         return [4 /*yield*/, database_1.default.connect()];
                     case 1:
                         conn = _a.sent();
                         return [4 /*yield*/, conn
-                                .query(sql, [b.title, b.author, b.totalPages, b.type, b.summary])];
+                                .query(sql, [b.title, b.author, b.total_pages, b.summary])];
                     case 2:
                         result = _a.sent();
                         book = result.rows[0];

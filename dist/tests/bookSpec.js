@@ -62,8 +62,8 @@ describe("Book Model", function () {
                         id: 1,
                         title: 'Bridge to Terabithia',
                         author: 'Katherine Paterson',
-                        totalPages: 250,
-                        type: 'Childrens',
+                        total_pages: 250,
+                        genre: 'Childrens',
                         summary: 'idk'
                     })];
                 case 1:
@@ -72,7 +72,7 @@ describe("Book Model", function () {
                         //@ts-ignore
                         id: "1",
                         title: 'Bridge to Terabithia',
-                        totalPages: 250,
+                        total_pages: 250,
                         author: 'Katherine Paterson',
                         type: 'Childrens'
                     });
@@ -91,7 +91,7 @@ describe("Book Model", function () {
                             //@ts-ignore
                             id: "1",
                             title: 'Bridge to Terabithia',
-                            totalPages: 250,
+                            total_pages: 250,
                             author: 'Katherine Paterson',
                             type: 'Childrens'
                         }]);
@@ -110,7 +110,7 @@ describe("Book Model", function () {
                         //@ts-ignore
                         id: "1",
                         title: 'Bridge to Terabithia',
-                        totalPages: 250,
+                        total_pages: 250,
                         author: 'Katherine Paterson',
                         type: 'Childrens'
                     });

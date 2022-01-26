@@ -1,4 +1,4 @@
-import { Book, BookStore } from '../models/book';
+import { Book, BookStore } from '../book';
 
 const store = new BookStore()
 
@@ -28,8 +28,8 @@ describe("Book Model", () => {
       id: 1,
       title: 'Bridge to Terabithia',
       author: 'Katherine Paterson',
-      totalPages: 250,
-      type: 'Childrens',
+      total_pages: 250,
+      genre: 'Childrens',
       summary: 'idk'
     });
 
@@ -37,7 +37,7 @@ describe("Book Model", () => {
       //@ts-ignore
       id: "1",
       title: 'Bridge to Terabithia',
-      totalPages: 250,
+      total_pages: 250,
       author: 'Katherine Paterson',
       type: 'Childrens'
     });
@@ -49,7 +49,7 @@ describe("Book Model", () => {
       //@ts-ignore
       id: "1",
       title: 'Bridge to Terabithia',
-      totalPages: 250,
+      total_pages: 250,
       author: 'Katherine Paterson',
       type: 'Childrens'
     }]);
@@ -61,7 +61,7 @@ describe("Book Model", () => {
       //@ts-ignore
       id: "1",
       title: 'Bridge to Terabithia',
-      totalPages: 250,
+      total_pages: 250,
       author: 'Katherine Paterson',
       type: 'Childrens'
     });

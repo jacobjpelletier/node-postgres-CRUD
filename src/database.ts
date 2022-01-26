@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-import { Pool } from 'pg'
+import { Pool, PoolClient } from "pg";
 
 dotenv.config()
 
