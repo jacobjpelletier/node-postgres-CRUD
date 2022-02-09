@@ -13,6 +13,7 @@ export type Book = {
 export class BookStore {
   async index(): Promise<Book[]> {
     try {
+      // @ts-ignore
       const conn = await client.connect()
       const sql = 'SELECT * FROM books'
 

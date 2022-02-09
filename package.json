@@ -6,12 +6,9 @@
   "scripts": {
     "prettier": "node_modules/.bin/prettier --config .prettierrc 'src/**/*.ts' --write",
     "lint": "node_modules/.bin/eslint 'src/*.ts'",
-    "jasmine": "jasmine",
     "build": "rm -rf dist && ttsc && cp -R migrations ./dist/db",
     "dev": "NODE_PATH=src nodemon --watch src -e ts --exec ts-node -r dotenv/config src/index.ts",
-    "test": "npm run build && npm run jasmine",
     "start": "node dist/index.js",
-    "db-test": "ENV=test db-migrate --env test up && jasmine-ts && db-migrate db:drop test"
   },
   "dependencies": {
     "db-migrate": "^0.11.13",
@@ -22,7 +19,6 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
-    "@types/jasmine": "^3.10.3",
     "@types/node": "^8.10.2",
     "@types/pg": "^7.14.11",
     "@types/supertest": "^2.0.11",
@@ -30,9 +26,6 @@
     "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "jasmine": "^4.0.1",
-    "jasmine-spec-reporter": "^7.0.0",
-    "jasmine-ts": "^0.4.0",
     "nodemon": "^2.0.7",
     "prettier": "^2.5.1",
     "supertest": "^6.1.6",
